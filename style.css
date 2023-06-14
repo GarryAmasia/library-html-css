@@ -5,16 +5,26 @@
   font-family: "Lato", sans-serif;
 }
 
+nav {
+  width: 100%;
+}
+
 .nav__container {
   width: 100%;
   max-width: 1200px;
   height: 80px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   /* background-color: red; */
   margin: 0 auto;
   align-items: center;
   padding: 0 24px;
+  border-bottom: 1px solid rgb(44, 92, 76);
+  /* background-color: white; */
+}
+
+.img {
+  width: 100%;
 }
 
 .logo {
@@ -29,17 +39,27 @@ li {
   list-style-type: none;
 }
 
+button {
+  cursor: pointer;
+}
+
+.text-green {
+  color: rgb(57, 124, 102);
+}
+
 .nav__link {
   margin-left: 16px;
   text-decoration: none;
   color: rgb(57, 124, 102);
   font-size: 16px;
   padding: 8px;
-  transition: all 700ms;
+  display: block;
+  transition: all 200ms;
 }
 
 .nav__link:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  transform: scale(0.8);
 }
 
 .nav__link--primary {
@@ -59,9 +79,77 @@ li {
   background-color: rgb(222, 239, 233);
 }
 
-/* HEADER */
+/* +++++++++++++++++++HEADER+++++++++++++++++++++ */
 
 header {
   height: calc(100vh - 80px);
   background-color: rgb(222, 239, 233);
+}
+
+.header__container {
+  /* background-color: rgb(165, 165, 165); */
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+h1 {
+  font-size: 48px;
+  color: rgb(44, 92, 76);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  color: rgb(44, 92, 76);
+}
+
+.btn {
+  border: 1px solid rgb(57, 124, 102);
+  background-color: rgb(44, 92, 76);
+  color: white;
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-size: 12px;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.header__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header__img--wrapper {
+  width: 100%;
+  padding: 20px;
+}
+
+.header__img--wrapper img {
+  width: 100%;
+  height: 100%;
+  max-height: 50vh;
+}
+
+/* +++++++++++++++++++MAIN+++++++++++++++++++++ */
+
+/* +++++++++++++++++++HIGHLIGHTS+++++++++++++++++++++ */
+
+.container {
+  padding: 56px 0;
+}
+
+.row {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
