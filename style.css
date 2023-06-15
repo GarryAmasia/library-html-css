@@ -161,7 +161,7 @@ h2 {
   width: 100%;
   max-width: 1200px;
   margin: 16px auto;
-  /* background-color: red; */
+  background-color: cyan;
 }
 
 .highlight__wrapper {
@@ -246,19 +246,23 @@ h2 {
   background-color: rgb(222, 239, 233);
 }
 
-.book__img {
+.books {
+  background-color: red;
+  display: flex;
 }
 
-.books {
-  /* display: flex; */
+.book {
+  background-color: gold;
+  width: 25%;
+  padding: 24px;
 }
 
 .book__img--wrapper {
 }
 
-.book {
-  background-color: tomato;
-  margin: 5px;
+.book__img {
+  transition: all 200ms;
+  max-height: 380px;
 }
 
 .book__img:hover {
