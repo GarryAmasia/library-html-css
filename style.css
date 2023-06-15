@@ -161,7 +161,7 @@ h2 {
   width: 100%;
   max-width: 1200px;
   margin: 16px auto;
-  background-color: cyan;
+  /* background-color: cyan; */
 }
 
 .highlight__wrapper {
@@ -220,7 +220,7 @@ h2 {
   height: 8vh;
   top: 0;
   left: 0;
-  z-index: 1;
+  /* z-index: 1; */
   background-size: cover;
   background-repeat: no-repeat;
   transform: translateY(0);
@@ -232,9 +232,10 @@ h2 {
   content: "";
   width: 100vw;
   height: 5vh;
-  top: 85%;
+  /* top: 82.7%; */
+  top: 82.7%;
   left: 0;
-  z-index: 1;
+  /* z-index: 1; */
   background-size: cover;
   background-repeat: no-repeat;
   transform: rotate(180deg);
@@ -247,22 +248,35 @@ h2 {
 }
 
 .books {
-  background-color: red;
+  /* background-color: red; */
   display: flex;
+  flex-wrap: wrap;
 }
 
 .book {
-  background-color: gold;
+  /* background-color: gold; */
   width: 25%;
   padding: 24px;
 }
 
 .book__img--wrapper {
+  margin-bottom: 24px;
+  /* background-color: lightgreen; */
+  width: 100%;
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 6px solid white;
+  box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.593);
+  cursor: not-allowed;
 }
 
 .book__img {
   transition: all 200ms;
-  max-height: 380px;
+  height: 380px;
+  width: 100%;
+
+  /* width: 100%; */
 }
 
 .book__img:hover {
@@ -286,4 +300,16 @@ h2 {
 .book__price--normal {
   text-decoration: line-through;
   color: rgb(255, 0, 0);
+}
+
+/* +++++++++++++++++++EXPLORE+++++++++++++++++++++ */
+
+.row__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#explore {
+  background-color: rgb(222, 239, 233);
 }
