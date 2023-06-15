@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
   /* scroll-behavior: smooth; */
+  max-width: 100%;
 }
 
 nav {
@@ -80,6 +81,13 @@ button {
   background-color: rgb(222, 239, 233);
 }
 
+.fa-solid,
+.fa-start,
+.fa-regular,
+.fa-star-half-stroke {
+  color: rgb(245, 172, 14);
+}
+
 /* +++++++++++++++++++HEADER+++++++++++++++++++++ */
 
 header {
@@ -152,7 +160,8 @@ h2 {
 .row {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 16px auto;
+  /* background-color: red; */
 }
 
 .highlight__wrapper {
@@ -169,6 +178,7 @@ h2 {
 
 .highlight__para {
   text-align: center;
+  color: rgb(103, 103, 103);
 }
 
 .highlight__img {
@@ -221,11 +231,55 @@ h2 {
   position: absolute;
   content: "";
   width: 100vw;
-  height: 7vh;
-  top: 90%;
+  height: 5vh;
+  top: 85%;
   left: 0;
   z-index: 1;
   background-size: cover;
   background-repeat: no-repeat;
   transform: rotate(180deg);
+}
+
+/* +++++++++++++++++++FEATURES+++++++++++++++++++++ */
+
+#features {
+  background-color: rgb(222, 239, 233);
+}
+
+.book__img {
+}
+
+.books {
+  /* display: flex; */
+}
+
+.book__img--wrapper {
+}
+
+.book {
+  background-color: tomato;
+  margin: 5px;
+}
+
+.book__img:hover {
+  transform: scale(1.03);
+}
+
+.book__title {
+  font-size: 20px;
+  margin-bottom: 8px;
+  cursor: not-allowed;
+}
+
+.book__title:hover {
+  text-decoration: underline;
+}
+
+.book__rating {
+  margin-bottom: 8px;
+}
+
+.book__price--normal {
+  text-decoration: line-through;
+  color: rgb(255, 0, 0);
 }
