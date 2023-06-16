@@ -441,6 +441,13 @@ footer {
   .books {
     justify-content: center;
   }
+  #highlights::after {
+    /* top: 86%; */
+    display: none;
+  }
+  #highlights::before {
+    display: none;
+  }
 }
 
 /* SMALL PHONE & LARGE SMART PHONE */
@@ -463,8 +470,13 @@ footer {
   }
 
   #highlights::after {
-    top: 93%;
+    display: none;
   }
+
+  #highlights::before {
+    display: none;
+  }
+
   .book {
     width: 80%;
   }
