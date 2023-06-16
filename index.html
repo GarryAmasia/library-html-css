@@ -12,6 +12,7 @@
       src="https://kit.fontawesome.com/fec710c91b.js"
       crossorigin="anonymous"
     ></script>
+    <script src="index.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
@@ -29,6 +30,30 @@
               <a class="nav__link nav__link--primary" href="#">Books</a>
             </li>
           </ul>
+
+          <button class="btn__menu" onclick="openMenu()">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="menu__backdrop">
+            <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+              <i class="fa-solid fa-xmark"> </i>
+            </button>
+            <ul class="menu__links">
+              <li class="menu__list">
+                <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
+              </li>
+              <li class="menu__list">
+                <a href="#features" class="menu__link" onclick="closeMenu()"
+                  >Books</a
+                >
+              </li>
+              <li class="menu__list">
+                <a href="#" class="menu__link no-cursor" onclick="closeMenu()"
+                  >Contacts</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
       <header>
@@ -40,7 +65,7 @@
               <span class="text-green">library</span>
             </h2>
             <div class="center">
-              <button class="btn">Browse books</button>
+              <a href="#features"><button class="btn">Browse books</button></a>
             </div>
           </div>
           <figure class="header__img--wrapper">
@@ -429,10 +454,34 @@
         <div class="container">
           <div class="row row__column">
             <h2>Discover more <span class="text-green">Books</span></h2>
-            <button class="btn">Browse books</button>
+            <a href="#features">
+              <button class="btn">Browse books</button>
+            </a>
           </div>
         </div>
       </section>
+      <footer>
+        <div class="container">
+          <div class="row row__column">
+            <a href="#">
+              <figure class="footer__logo">
+                <img
+                  class="footer__logo--img"
+                  src="./assets/Library.svg"
+                  alt=""
+                />
+              </figure>
+            </a>
+            <div class="footer__list">
+              <a class="footer__link" href="">Home</a>
+              <a class="footer__link no-cursor" href="">About</a>
+              <a class="footer__link" href="">Books</a>
+              <a class="footer__link no-cursor" href="">Contact</a>
+            </div>
+            <div class="footer__copyright">Copyright &copy; 2023 Library</div>
+          </div>
+        </div>
+      </footer>
     </main>
   </body>
 </html>

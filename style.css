@@ -1,14 +1,18 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
-  /* scroll-behavior: smooth; */
   max-width: 100%;
 }
 
 nav {
   width: 100%;
+  display: flex;
 }
 
 .nav__container {
@@ -49,6 +53,68 @@ button {
   color: rgb(44, 92, 76);
 }
 
+.btn__menu {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  text-align: center;
+  color: rgb(44, 92, 76);
+  display: none;
+}
+
+.menu__backdrop {
+  position: absolute;
+  background-color: rgb(74, 159, 131);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  /* display: none; */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms ease-in-out;
+}
+
+.menu--open .menu__backdrop {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+}
+
+.btn__menu--close {
+  position: absolute;
+  right: 20px;
+  top: 23px;
+  /* padding: 8px; */
+  color: rgb(44, 92, 76);
+}
+
+.menu__links {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-around;
+}
+
+.menu__list {
+  padding: 32px 0;
+}
+
+.menu__link {
+  color: white;
+  font-size: 18px;
+}
+
+.menu--open {
+  min-height: 100vh;
+  overflow-y: hidden;
+}
+
+/* +++++++++++++++++++LANDING+++++++++++++++++++++ */
+
 .nav__link {
   margin-left: 16px;
   text-decoration: none;
@@ -61,7 +127,7 @@ button {
 
 .nav__link:hover {
   /* text-decoration: underline; */
-  transform: scale(0.8);
+  transform: scale(1.2);
 }
 
 .nav__link--primary {
@@ -85,7 +151,15 @@ button {
 .fa-start,
 .fa-regular,
 .fa-star-half-stroke {
-  color: rgb(245, 172, 14);
+  color: rgb(44, 92, 76);
+}
+
+.no-cursor {
+  cursor: not-allowed;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* +++++++++++++++++++HEADER+++++++++++++++++++++ */
@@ -233,7 +307,7 @@ h2 {
   width: 100vw;
   height: 5vh;
   /* top: 82.7%; */
-  top: 82.7%;
+  top: 84.6%;
   left: 0;
   /* z-index: 1; */
   background-size: cover;
@@ -312,4 +386,46 @@ h2 {
 
 #explore {
   background-color: rgb(222, 239, 233);
+}
+
+/* +++++++++++++++++++FOOTER+++++++++++++++++++++ */
+
+footer {
+  background-color: rgb(44, 92, 76);
+}
+
+.footer__logo--img {
+  filter: grayscale(1) invert(1);
+  width: 160px;
+}
+
+.footer__link,
+.footer__copyright {
+  color: rgb(222, 239, 233);
+}
+
+.footer__list {
+  margin: 24px 0;
+}
+
+.footer__logo {
+  /* background-color: red; */
+  /* display: flex; */
+  line-height: 0;
+}
+
+.footer__link {
+  padding: 0 8px;
+}
+
+/* +++++++++++++++++++MEDIA QUERY+++++++++++++++++++++ */
+
+@media (max-width: 550px) {
+  .nav__links {
+    display: none;
+  }
+
+  .btn__menu {
+    display: block;
+  }
 }
