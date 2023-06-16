@@ -199,7 +199,7 @@ h2 {
   color: white;
   border-radius: 10px;
   padding: 10px 24px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .btn:active {
@@ -271,6 +271,7 @@ h2 {
 .highlight__subtitle {
   font-size: 20px;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .highlight p {
@@ -420,6 +421,29 @@ footer {
 
 /* +++++++++++++++++++MEDIA QUERY+++++++++++++++++++++ */
 
+/* TABLET 768px */
+@media (max-width: 768px) {
+  .header__description {
+    padding: 0 24px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  .btn {
+    font-size: 12px;
+  }
+  .book {
+    width: 40%;
+  }
+  .books {
+    justify-content: center;
+  }
+}
+
+/* SMALL PHONE & LARGE SMART PHONE */
 @media (max-width: 550px) {
   .nav__links {
     display: none;
@@ -427,5 +451,24 @@ footer {
 
   .btn__menu {
     display: block;
+  }
+
+  .highlight {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .highlight__wrapper {
+    flex-wrap: wrap;
+  }
+
+  #highlights::after {
+    top: 93%;
+  }
+  .book {
+    width: 80%;
+  }
+  .books {
+    justify-content: center;
   }
 }
