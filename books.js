@@ -21,8 +21,8 @@ function getBooks() {
       id: 3,
       title: "The Pen and The Sword",
       url: "assets/garry's books/the-pen.jpeg",
-      originalPrice: 29,
-      salePrice: 12,
+      originalPrice: 29.99,
+      salePrice: null,
       rating: 4,
     },
     {
@@ -38,8 +38,8 @@ function getBooks() {
       title: "Brightest Star",
       url: "assets/garry's books/emma.jpeg",
       originalPrice: 28.99,
-      salePrice: 19.99,
-      rating: 4,
+      salePrice: null,
+      rating: 4.5,
     },
     {
       id: 6,
@@ -86,7 +86,7 @@ function getBooks() {
       title: "The Last Man Out",
       url: "assets/garry's books/last.jpeg",
       originalPrice: 59.99,
-      salePrice: 29.99,
+      salePrice: null,
       rating: 4.5,
     },
     {
@@ -136,28 +136,28 @@ const renderBooks = (filter) => {
   const booksList = getBooks();
   const booksWrapper = document.querySelector(".books");
   //   console.log(booksList);
-  //   booksList.map((book) => {
-  //     return (booksWrapper.innerHTML += `<div class="book">
-  //                   <figure class="book__img--wrapper">
-  //                     <img
-  //                       class="book__img"
-  //                       src="${book.url}"
-  //                       alt=""
-  //                     />
-  //                   </figure>
-  //                   <div class="book__title">${book.title}</div>
-  //                   <div class="book__rating">
-  //                     <i class="fa-solid fa-star"></i>
-  //                     <i class="fa-solid fa-star"></i>
-  //                     <i class="fa-solid fa-star"></i>
-  //                     <i class="fa-solid fa-star"></i>
-  //                     <i class="fa-regular fa-star-half-stroke"></i>
-  //                   </div>
-  //                   <div class="book__price">
-  //                     <span class="book__price--normal">$${book.originalPrice}</span> | $${book.salePrice}
-  //                   </div>
-  //                 </div>`);
-  //   });
+  // booksList.map((book) => {
+  //   return (booksWrapper.innerHTML += `<div class="book">
+  //                 <figure class="book__img--wrapper">
+  //                   <img
+  //                     class="book__img"
+  //                     src="${book.url}"
+  //                     alt=""
+  //                   />
+  //                 </figure>
+  //                 <div class="book__title">${book.title}</div>
+  //                 <div class="book__rating">
+  //                   <i class="fa-solid fa-star"></i>
+  //                   <i class="fa-solid fa-star"></i>
+  //                   <i class="fa-solid fa-star"></i>
+  //                   <i class="fa-solid fa-star"></i>
+  //                   <i class="fa-regular fa-star-half-stroke"></i>
+  //                 </div>
+  //                 <div class="book__price">
+  //                   <span class="book__price--normal">$${book.originalPrice}</span> | $${book.salePrice}
+  //                 </div>
+  //               </div>`);
+  // });
   if (filter === "low_to_high") {
     booksList.sort((a, b) => a.originalPrice - b.originalPrice);
   } else if (filter === "high_to_low") {
@@ -185,7 +185,7 @@ const renderBooks = (filter) => {
                          ${getRatings(book.rating)}
                        </div>
                        <div class="book__price">
-                         <span >$${book.originalPrice.toFixed(2)}
+                         ${determinePrice(book.originalPrice, book.salePrice)}
                        </div>
                      </div>`;
     })
@@ -215,4 +215,13 @@ const getRatings = (rating) => {
   }
 
   return ratingHTML;
+};
+
+const determinePrice = (originalPrice, salesPrice) => {
+  console.log(originalPrice, salesPrice);
+  //   console.log(salesPrice);
+  if (!salesPrice) {
+    return `$${originalPrice}`;
+  }
+  return `<span class="book__price--normal">${originalPrice}</span> | ${salesPrice}`;
 };
