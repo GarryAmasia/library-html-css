@@ -1,5 +1,3 @@
-console.log("hallo");
-
 const openMenu = () => {
   document.body.classList += "menu--open";
 };

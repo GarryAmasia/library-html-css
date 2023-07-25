@@ -484,3 +484,15 @@ footer {
     justify-content: center;
   }
 }
+
+/* books page */
+
+.books__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+.books__header--title {
+  margin-bottom: 0;
+}
