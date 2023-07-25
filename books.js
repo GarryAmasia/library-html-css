@@ -7,7 +7,7 @@ function getBooks() {
       url: "assets/garry's books/a-million.jpeg",
       originalPrice: 63.99,
       salePrice: 30.99,
-      rating: 4.5,
+      rating: 1,
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ function getBooks() {
       url: "assets/garry's books/the-pen.jpeg",
       originalPrice: 29,
       salePrice: 12,
-      rating: 5,
+      rating: 4,
     },
     {
       id: 4,
@@ -47,7 +47,7 @@ function getBooks() {
       url: "assets/garry's books/noplace.jpeg",
       originalPrice: 43.99,
       salePrice: 30.99,
-      rating: 5,
+      rating: 3.5,
     },
     {
       id: 7,
@@ -103,7 +103,7 @@ function getBooks() {
       url: "assets/garry's books/lunar.jpeg",
       originalPrice: 23.99,
       salePrice: null,
-      rating: 4.5,
+      rating: 5,
     },
     {
       id: 14,
@@ -119,7 +119,7 @@ function getBooks() {
       url: "assets/garry's books/berlin.jpeg",
       originalPrice: 53.99,
       salePrice: 35.99,
-      rating: 4.5,
+      rating: 2.5,
     },
     {
       id: 16,
@@ -165,15 +165,10 @@ const renderBooks = (filter) => {
       return b.originalPrice - a.originalPrice;
     });
   } else if (filter === "rating") {
-    booksList.sort((a, b) => a.rating - b.rating);
+    booksList.sort((a, b) => b.rating - a.rating);
   }
 
-  let rating = "";
-
-  for (let i = 0; i < 4; i++) {
-    rating += `<i class="fa-solid fa-star"></i>`;
-  }
-  console.log(rating);
+  //   console.log(ratingHTML);
 
   booksHTML = booksList
     .map((book) => {
@@ -187,11 +182,7 @@ const renderBooks = (filter) => {
                        </figure>
                        <div class="book__title">${book.title}</div>
                        <div class="book__rating">
-                         <i class="fa-solid fa-star"></i>
-                         <i class="fa-solid fa-star"></i>
-                         <i class="fa-solid fa-star"></i>
-                         <i class="fa-solid fa-star"></i>
-                         <i class="fa-regular fa-star-half-stroke"></i>
+                         ${getRatings(book.rating)}
                        </div>
                        <div class="book__price">
                          <span >$${book.originalPrice.toFixed(2)}
@@ -210,4 +201,18 @@ setTimeout(() => {
 
 const filterBooks = (e) => {
   renderBooks(e.target.value);
+};
+
+const getRatings = (rating) => {
+  let ratingHTML = "";
+
+  for (let i = 0; i < Math.floor(rating); i++) {
+    ratingHTML += `<i class="fa-solid fa-star"></i>\n`;
+  }
+
+  if (!Number.isInteger(rating)) {
+    ratingHTML += `<i class="fa-regular fa-star-half-stroke"></i>\n`;
+  }
+
+  return ratingHTML;
 };
