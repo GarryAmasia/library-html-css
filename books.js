@@ -1,3 +1,4 @@
+// </span> | $${book.salePrice}
 function getBooks() {
   return [
     {
@@ -176,9 +177,7 @@ const renderBooks = () => {
                          <i class="fa-regular fa-star-half-stroke"></i>
                        </div>
                        <div class="book__price">
-                         <span class="book__price--normal">$${book.originalPrice.toFixed(
-                           2
-                         )}</span> | $${book.salePrice}
+                         <span >$${book.originalPrice.toFixed(2)}
                        </div>
                      </div>`;
     })
@@ -190,3 +189,7 @@ const renderBooks = () => {
 setTimeout(() => {
   renderBooks();
 }, 1000);
+
+const filterBooks = (e) => {
+  console.log(e.target.value);
+};
