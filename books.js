@@ -136,9 +136,15 @@ function getBooks() {
   });
 }
 
+let booksList;
+
 const renderBooks = async (filter) => {
-  const booksList = await getBooks();
   const booksWrapper = document.querySelector(".books");
+  booksWrapper.classList += " books__loading";
+  if (!booksList) {
+    booksList = await getBooks();
+  }
+  booksWrapper.classList.remove("books__loading");
   //   console.log(booksList);
   // booksList.map((book) => {
   //   return (booksWrapper.innerHTML += `<div class="book">
@@ -208,7 +214,7 @@ const renderBooks = async (filter) => {
 
 setTimeout(() => {
   renderBooks();
-}, 1000);
+});
 
 const filterBooks = (e) => {
   renderBooks(e.target.value);
