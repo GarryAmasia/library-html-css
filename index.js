@@ -1,5 +1,5 @@
 const openMenu = () => {
-  document.body.classList += "menu--open";
+  document.body.classList += " menu--open";
 };
 
 const closeMenu = () => {

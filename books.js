@@ -144,6 +144,8 @@ const renderBooks = async (filter) => {
   if (!booksList) {
     booksList = await getBooks();
   }
+  //   booksList = await getBooks();
+
   booksWrapper.classList.remove("books__loading");
   //   console.log(booksList);
   // booksList.map((book) => {
